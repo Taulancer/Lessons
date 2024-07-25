@@ -15,6 +15,12 @@ public class Main {
         flipArrayElements();
         fillArray();
         processArray();
+        printDiagonalMatrix(5); // Задание 13
+        int[] newArray = createArray(5, 10); // Задание 14
+        for (int value : newArray) {
+            System.out.print(value + " ");
+        }
+        System.out.println();
     }
 
     public static void printThreeWords() {
@@ -26,8 +32,7 @@ public class Main {
     public static void checkSumSign() {
         int a = 5;
         int b = -10;
-        int sum = a + b;
-        if (sum >= 0) {
+        if ((a + b) >= 0) {
             System.out.println("Сумма положительная");
         } else {
             System.out.println("Сумма отрицательная");
@@ -56,8 +61,8 @@ public class Main {
     }
 
     public static boolean isSumInRange(int a, int b) {
-        int sum = a + b;
-        return sum >= 10 && sum <= 20;
+
+        return (a + b) >= 10 && (a + b) <= 20;
     }
 
     public static void printNumberSign(int num) {
@@ -69,6 +74,7 @@ public class Main {
     }
 
     public static boolean isNegative(int num) {
+
         return num < 0;
     }
 
@@ -116,4 +122,27 @@ public class Main {
         }
         System.out.println();
     }
+
+    public static void printDiagonalMatrix(int size) {
+        int[][] matrix = new int[size][size];
+        for (int i = 0; i < size; i++) {
+            matrix[i][i] = 1; // Заполнение главной диагонали
+            matrix[i][size - i - 1] = 1; // Заполнение побочной диагонали
+        }
+        for (int[] row : matrix) {
+            for (int value : row) {
+                System.out.print(value + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static int[] createArray(int len, int initialValue) {
+        int[] array = new int[len];
+        for (int i = 0; i < len; i++) {
+            array[i] = initialValue;
+        }
+        return array;
+    }
 }
+
