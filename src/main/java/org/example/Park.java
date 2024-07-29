@@ -26,7 +26,6 @@ public class Park {
         }
     }
 
-    // Внутренний класс Attraction
     public class Attraction {
         private String name;
         private String workingHours;
